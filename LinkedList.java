@@ -24,8 +24,11 @@ public class SingleLinkedList<T> {
 	public void setSize(int x){
 		ListCounter = x;
 	}
+	public void addToFront(T value){
+		head = new Node<T>(value, head);	 
+	}
 	/*
-	* Recursive add function for singly linked list.  Appends to the end of the list.
+	* Add function for the singly linked list. Appends to the end of the list.
 	* Creates a new head node if the list is empty.  
 	* parameter value: value = data to be stored in new node added to list.  
 	*/
@@ -34,7 +37,12 @@ public class SingleLinkedList<T> {
 			head = new Node<T>(value, null);
 		}
 		else{
-			add(head, value);
+			Node temp = new Node<T>(value);
+			Node current = head;
+			for(int i=0;i < ListCounter;i++){
+				current = current.getNext();
+			}
+			current.setNext(temp);
 		}
 		ListCounter++;
 	}
