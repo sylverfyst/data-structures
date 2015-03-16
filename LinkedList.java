@@ -38,6 +38,32 @@ public class SingleLinkedList<T> {
 		}
 		ListCounter++;
 	}
+	/*
+	* Add at index function, overloaded. The function inserts a node at the given index. 
+	* Throws exception if index is out of bounds.
+	* parameter values: value = data to be added to the list, index = place in the list where new node is added.
+	*/
+	public void add(T value, int index) throws NoNextNodeException{
+		if((index < 1) || (index > ListCounter)){
+			throw new NoNextNodeException("Invalid index: " + index + "only indexes 1 through " + (ListCounter) + "are valid indexes");
+		}
+		else {
+			Node<T> temp = new Node<T>(value, null);
+			Node<T> current = head;
+			for (int i = 1; i < index && current.getNext() != null; i++) {
+            	current = current.getNext();
+        	}
+        	temp.setNext(current.getNext());
+        	current.setNext(temp);
+		}
+		ListCounter++;	
+	}
+	/*
+	* Remove function, crawls through to the specified index and sets the next node reference to the next next node,
+	* essentially skipping a node, garbage collection then takes care of the skipped node.  Throws and exception if
+	* the index is out of bounds.
+	* parameter value: index = index of node to be removed
+	*/
 	public void remove(int index) throws NoNextNodeException {
 		if((index < 1) || (index > ListCounter)){
 			throw new NoNextNodeException("Invalid index: " + index + "only indexes 1 through " + ListCounter + "are removable");
@@ -54,6 +80,15 @@ public class SingleLinkedList<T> {
 		}
 		ListCounter--;
 	}
+	public String toString() {
+        Node current = head;
+        String output = "";
+        while (current.getNext() != null) {
+            output += "[" + current.getData().toString() + "]";
+            current = current.getNext();
+        }
+        return output;
+    }
 }
 
 private class Node<T> {
