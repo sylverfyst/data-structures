@@ -1,11 +1,11 @@
-# data-structures
+# Data-structures
 Author: Bryan Metzger
 
-Last Updated: March 16th
+Last Updated: August 6th
 
-Planned Languages: Java, C, C++, PHP, C#, Objective-C
+Planned Languages: Java, Ruby
 
-Planned Structures: Linked List, Queue, Heap, Hashtable, Stacks, Binary Tree, Maps and Graphs
+Planned Structures: Linked List, Queue, Heap, Hash, Stacks, Binary Tree, Maps and Graphs
 
-A repository of all of the fundamental data structures in as many languages as I can code in.  All structures will be programmed with readability and reusability in mind.  
+A repository of all of the fundamental data structures in as many languages as I can code in as I have time to add to them.  All structures will be programmed with readability and reusability in mind.  
 
