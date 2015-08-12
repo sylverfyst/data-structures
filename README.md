@@ -1,7 +1,7 @@
 # Data-structures
 Author: Bryan Metzger
 
-Last Updated: August 6th
+Last Updated: August 12th
 
 Planned Languages: Java, Ruby
 
