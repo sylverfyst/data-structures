@@ -46,7 +46,7 @@ public class bfmStack<T> {
 		}
 	}
 	//constructor
-	public bfmStack() {
+	public bfmStack<T>() {
 		top = null;
 		size = 0;
 	}
@@ -71,7 +71,7 @@ public class bfmStack<T> {
 	public T pop() {
 		if(isEmpty() == true) 
 			throw new RuntimeException("Stack Underflow");
-		T popped = top.item;
+		T popped = top.getData();
 		top = top.getNext();
 		size--;
 		return popped;
